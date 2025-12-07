@@ -1,0 +1,201 @@
+/* Top Navbar - Fixed di atas */
+.top-navbar {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    z-index: 10000 !important;
+    height: 70px;
+    background: white;
+    display: flex;
+    align-items: center;
+    padding: 0 24px;
+    border-bottom: 1px solid #E0E0E0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    gap: 20px;
+}
+
+/* Hamburger Menu */
+.hamburger-menu {
+    background: #F5F5F5;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.hamburger-menu:hover {
+    background: #E0E0E0;
+}
+
+/* Nav Left */
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.nav-logo-image {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.nav-logo {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1a1a1a;
+}
+
+/* Nav Center */
+.nav-center {
+    flex: 1;
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+    z-index: 10; /* TAMBAHKAN INI */
+    position: relative; /* TAMBAHKAN INI */
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #666;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.hidden {
+    display: none;
+}
+
+.nav-link:hover {
+    background: #F5F5F5;
+    color: #1a1a1a;
+}
+
+.nav-link.active {
+    color: #64B5F6;
+    background: #E3F2FD;
+}
+
+/* Nav Right */
+.nav-right {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.time {
+    font-size: 14px;
+    font-weight: 600;
+    color: #666;
+    padding: 8px 12px;
+    background: #F5F5F5;
+    border-radius: 8px;
+}
+
+.btn-cart {
+    position: relative;
+    background: #F5F5F5;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-cart:hover {
+    background: #E0E0E0;
+}
+
+.cart-badge {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    background: #F44336;
+    color: white;
+    font-size: 10px;
+    font-weight: 600;
+    padding: 2px 6px;
+    border-radius: 10px;
+    min-width: 18px;
+    text-align: center;
+}
+
+.btn-login, .btn-daftar {
+    padding: 10px 24px;
+    border-radius: 20px;
+    border: none;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-login {
+    background: #90CAF9;
+    color: white;
+}
+
+.btn-login:hover {
+    background: #64B5F6;
+}
+
+.btn-daftar {
+    background: #BBDEFB;
+    color: white;
+}
+
+.btn-daftar:hover {
+    background: #90CAF9;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .nav-center {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-logo {
+        display: none;
+    }
+    
+    .nav-right .time {
+        display: none;
+    }
+}
+
+@media (max-width: 992px) {
+    .nav-center {
+        display: none; /* Hidden by default di mobile */
+    }
+    
+    .nav-center:not(.hidden) {
+        display: flex; /* Tampil ketika hamburger diklik */
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: white;
+        flex-direction: column;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+}
