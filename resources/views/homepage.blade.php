@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="{{ asset('css/side.css') }}">
     <link rel="stylesheet" href="{{ asset('css/navbar.css') }}">
     <link rel="stylesheet" href="{{ asset('css/homepage.css') }}">
-    <script src="{{ asset('js/homepage.js') }}"></script>
 </head>
 <body class="sidebar-layout">
 
@@ -135,11 +134,9 @@
             </section>
         </div>
     </div>
-
-    <!-- Load Components Script FIRST -->
-    <script src="js/navbar.js"></script>
-    <!-- Then load page-specific scripts -->
-    <script src="js/homepage.js"></script>
-    <script src="js/side.js"></script>
+    <script src="{{ asset('js/toggle.js') }}"></script>
+    <script src="{{ asset('js/navbar.js') }}"></script>
+    <script src="{{ asset('js/side.js') }}"></script>
+    <script src="{{ asset('js/homepage.js') }}"></script>
 </body>
 </html>

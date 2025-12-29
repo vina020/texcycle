@@ -34,9 +34,8 @@
     <span class="cart-badge">3</span>
 </button>
 
-        <button class="btn-login">Login</button>
+        <a href="{{ route('login') }}" class="btn-login">Login</a>
         <button class="btn-daftar">Daftar</button>
     </div>
 </nav>
-
-<script src="{{ asset('js/navbar.js') }}"></script>
+</html>

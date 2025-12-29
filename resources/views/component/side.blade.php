@@ -75,9 +75,9 @@
             </svg>
         </button>
     </div>
-    <div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
-<script src="{{ asset('js/side.js') }}"></script>
 </aside>
-
-</body>
+<div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+<script src="{{ asset('js/toggle.js') }}"></script>
+<script src="{{ asset('js/navbar.js') }}"></script>
+<script src="{{ asset('js/side.js') }}"></script></body>
 </html>
