@@ -2,26 +2,22 @@
 
 namespace App\Models;
 
-use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class User extends Authenticatable
+class Bin extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'name',
-        'email',
-        'password'
+        'location',
+        'capacity',
+        'current_load',
+        'status'
     ];
 
     public function transactions()
     {
         return $this->hasMany(Transaction::class);
-    }
-
-    public function rewards()
-    {
-        return $this->hasMany(Reward::class);
     }
 }
