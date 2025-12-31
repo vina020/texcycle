@@ -72,12 +72,6 @@ function handleActionClick(e) {
     setTimeout(() => {
         card.style.transform = '';
     }, 150);
-    
-    if (title.includes('Donasi')) {
-        window.location.href = 'dropbin.html';
-    } else if (title.includes('Belanja')) {
-        window.location.href = 'marketplace.html';
-    }
 }
 
 function handleTransactionClick(e) {

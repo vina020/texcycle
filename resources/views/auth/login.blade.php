@@ -17,8 +17,21 @@
             </div>
 
             <!-- Login Form -->
-            <form class="login-form" id="loginForm">
-                <div class="form-group">
+            <form class="login-form" id="loginForm" action="{{ route('login.post') }}" method="POST">
+    @csrf
+    
+    @if($errors->any())
+        <div style="background: #ffebee; color: #c62828; padding: 12px; border-radius: 8px; margin-bottom: 16px;">
+            {{ $errors->first('username') }}
+        </div>
+    @endif
+    
+    @if(session('success'))
+        <div style="background: #e8f5e9; color: #2e7d32; padding: 12px; border-radius: 8px; margin-bottom: 16px;">
+            {{ session('success') }}
+        </div>
+    @endif
+            <div class="form-group">
                     <label for="username" class="form-label">Username</label>
                     <div class="input-wrapper">
                         <svg class="input-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">

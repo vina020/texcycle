@@ -122,8 +122,8 @@ body {
 
 .form-input:focus {
     outline: none;
-    border-color: #64B5F6;
-    background: #F5FCFF;
+    border-color: #4CAF50;
+    background: #F1F8F4;
 }
 
 .form-input::placeholder {
@@ -143,7 +143,7 @@ body {
 }
 
 .toggle-password:hover {
-    color: #64B5F6;
+    color: #4CAF50;
 }
 
 .eye-icon {
@@ -169,7 +169,7 @@ body {
     height: 18px;
     margin-right: 8px;
     cursor: pointer;
-    accent-color: #64B5F6;
+    accent-color: #45a049;
 }
 
 .checkbox-label {
@@ -180,14 +180,14 @@ body {
 
 .forgot-link {
     font-size: 14px;
-    color: #64B5F6;
+    color: #45a049;
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s ease;
 }
 
 .forgot-link:hover {
-    color: #42A5F5;
+    color: #45a049;
     text-decoration: underline;
 }
 
@@ -271,7 +271,7 @@ body {
 }
 
 .btn-social:hover {
-    border-color: #64B5F6;
+    border-color: #45a049;
     background: #F5FCFF;
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
@@ -285,7 +285,7 @@ body {
 }
 
 .register-link a {
-    color: #64B5F6;
+    color: #45a049;
     text-decoration: none;
     font-weight: 600;
     margin-left: 4px;
@@ -293,7 +293,7 @@ body {
 }
 
 .register-link a:hover {
-    color: #42A5F5;
+    color: #45a049;
     text-decoration: underline;
 }
 
