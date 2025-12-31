@@ -43,47 +43,6 @@ function validateForm() {
     return isValid;
 }
 
-// Form Submit Handler
-document.getElementById('loginForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    if (!validateForm()) {
-        return;
-    }
-    
-    const loginBtn = this.querySelector('.btn-login');
-    const username = document.getElementById('username').value;
-    const password = document.getElementById('password').value;
-    const remember = document.getElementById('remember').checked;
-    
-    // Add loading state
-    loginBtn.classList.add('loading');
-    
-    // Simulate API call (replace with actual API call)
-    setTimeout(() => {
-        console.log('Login attempt:', {
-            username: username,
-            password: password,
-            remember: remember
-        });
-        
-        // Success - redirect to dashboard
-        // window.location.href = '/dashboard';
-        
-        // For demo purposes, show success message
-        alert('Login berhasil! Redirecting...');
-        
-        // Remove loading state
-        loginBtn.classList.remove('loading');
-        
-        // Redirect after delay
-        setTimeout(() => {
-            window.location.href = '/dashboard';
-        }, 500);
-        
-    }, 1500);
-});
-
 // Remove error state on input
 document.querySelectorAll('.form-input').forEach(input => {
     input.addEventListener('input', function() {

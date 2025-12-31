@@ -16,8 +16,19 @@
                 <p class="register-subtitle">Bergabunglah dengan TexCycle</p>
             </div>
 
+            @if ($errors->any())
+    <div style="background: #fee; border: 1px solid #f00; padding: 10px; margin-bottom: 20px; border-radius: 5px;">
+        <strong>Error:</strong>
+        <ul style="margin: 10px 0 0 0;">
+            @foreach ($errors->all() as $error)
+                <li style="color: #d00;">{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
             <!-- Register Form -->
-            <form class="register-form" id="registerForm">
+            <form class="register-form" id="registerForm" method="POST" action="{{ route('register') }}">
+                @csrf
                 <div class="form-group">
                     <label for="email" class="form-label">Email</label>
                     <div class="input-wrapper">
@@ -90,40 +101,38 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="confirm_password" class="form-label">Konfirmasi Password</label>
-                    <div class="input-wrapper">
-                        <svg class="input-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
-                            <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
-                        </svg>
-                        <input 
-                            type="password" 
-                            id="confirm_password" 
-                            name="confirm_password" 
-                            class="form-input" 
-                            placeholder="Masukkan password lagi"
-                            required
-                        >
-                        <button type="button" class="toggle-password" id="toggleConfirmPassword">
-                            <svg class="eye-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
-                                <circle cx="12" cy="12" r="3"/>
-                            </svg>
-                        </button>
-                    </div>
-                    <span class="error-message" id="confirmPasswordError"></span>
-                </div>
-
-                <div class="form-group">
-                    <label class="checkbox-wrapper">
-                        <input type="checkbox" id="terms" name="terms" required>
-                        <span class="checkbox-label">
-                            Saya setuju dengan <a href="{{ url('/terms') }}" class="link">Syarat & Ketentuan</a> dan <a href="{{ url('/privacy') }}" class="link">Kebijakan Privasi</a>
-                        </span>
-                    </label>
-                </div>
-
-                <button type="submit" class="btn-register">
+    <label for="password_confirmation" class="form-label">Konfirmasi Password</label>
+    <div class="input-wrapper">
+        <svg class="input-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+        </svg>
+        <input 
+            type="password" 
+            id="password_confirmation" 
+            name="password_confirmation"
+            class="form-input" 
+            placeholder="Masukkan password lagi"
+            required
+        >
+        <button type="button" class="toggle-password" id="toggleConfirmPassword">
+            <svg class="eye-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                <circle cx="12" cy="12" r="3"/>
+            </svg>
+        </button>
+    </div>
+    <span class="error-message" id="confirmPasswordError"></span>
+</div>
+<div class="form-group">
+    <label class="checkbox-wrapper">
+        <input type="checkbox" id="terms" name="terms" required>
+        <span class="checkbox-label">
+            Saya setuju dengan <a href="{{ url('/terms') }}" class="link">Syarat & Ketentuan</a> dan <a href="{{ url('/privacy') }}" class="link">Kebijakan Privasi</a>
+        </span>
+    </label>
+</div>
+<button type="submit" class="btn-register">
                     <span class="btn-text">Daftar Sekarang</span>
                     <svg class="btn-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <line x1="5" y1="12" x2="19" y2="12"/>
@@ -161,7 +170,5 @@
         <div class="decoration decoration-1"></div>
         <div class="decoration decoration-2"></div>
     </div>
-
-    <script src="{{ asset('js/register.js') }}"></script>
 </body>
 </html>

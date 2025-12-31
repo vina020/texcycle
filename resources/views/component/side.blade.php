@@ -61,19 +61,22 @@
 
     <div class="sidebar-footer">
         <div class="user-info">
-            <div class="user-avatar">A</div>
+            <div class="user-avatar">{{ strtoupper(substr(auth()->user()->name, 0, 1)) }}</div>
             <div class="user-details">
-                <div class="user-name">Alifah Putri</div>
-                <div class="user-email">alifah@email.com</div>
-            </div>
+                <div class="user-name">{{ auth()->user()->name }}</div>
+            <div class="user-email">{{ auth()->user()->email }}</div>
         </div>
-        <button class="logout-btn" onclick="logout()">
+        </div>
+        <form action="{{ route('logout') }}" method="POST" style="display: inline;">
+        @csrf
+        <button type="submit" class="logout-btn">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
                 <polyline points="16 17 21 12 16 7"/>
                 <line x1="21" y1="12" x2="9" y2="12"/>
             </svg>
         </button>
+    </form>
     </div>
 </aside>
 <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
